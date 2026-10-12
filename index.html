@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedCare - Medical Store Management System</title>
+  <meta name="description" content="Comprehensive, modern, and responsive pharmacy and medical store management platform featuring inventory, billing/POS, expiry tracking, supplier/customer management, and Java MySQL backend architecture.">
+  <meta property="og:title" content="MedCare - Medical Store Management System">
+  <meta property="og:description" content="Comprehensive, modern, and responsive pharmacy and medical store management platform.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/animations.css">
+</head>
+<body class="bg-slate-50 min-h-screen flex items-center justify-center p-4">
+  <div class="max-w-xl w-full bg-white rounded-2xl shadow-xl border border-slate-200 p-8 text-center">
+    <div class="inline-flex p-2 bg-slate-50 border border-slate-200 rounded-2xl mb-4 shadow-sm">
+      <img src="/assets/logo.svg" alt="MedCare Pharmacy Logo" class="h-14 w-auto object-contain">
+    </div>
+    
+    <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight">MedCare Pharmacy</h1>
+    <p class="text-sm text-slate-500 mt-1 max-w-md mx-auto">
+      Enterprise Pharmacy Management System with POS Billing, Real-Time Inventory Control, and Java & MySQL Architecture.
+    </p>
+
+    <div class="mt-8 space-y-3">
+      <a href="dashboard.html" class="btn btn-primary w-full py-3 text-base shadow-md">
+        <i class="fa-solid fa-chart-pie me-2"></i> Launch Admin Dashboard
+      </a>
+      <a href="sales.html" class="btn btn-success w-full py-3 text-base shadow-md">
+        <i class="fa-solid fa-cash-register me-2"></i> Open POS Billing Counter
+      </a>
+      <div class="grid grid-cols-2 gap-3 pt-2">
+        <a href="medicines.html" class="btn btn-outline py-2.5 text-xs font-bold">
+          <i class="fa-solid fa-pills me-1"></i> Medicines
+        </a>
+        <a href="inventory.html" class="btn btn-outline py-2.5 text-xs font-bold">
+          <i class="fa-solid fa-boxes-stacked me-1"></i> Inventory
+        </a>
+        <a href="expiry.html" class="btn btn-outline py-2.5 text-xs font-bold">
+          <i class="fa-solid fa-clock-rotate-left me-1"></i> Expiry Radar
+        </a>
+        <a href="backend-explorer.html" class="btn btn-outline py-2.5 text-xs font-bold text-primary-700 border-primary-200 bg-primary-50 hover:bg-primary-100">
+          <i class="fa-solid fa-database me-1"></i> Java & SQL Code
+        </a>
+      </div>
+
+      <div class="pt-3">
+        <a href="/medcare-pharmacy-project.zip" download="medcare-pharmacy-project.zip" class="btn btn-outline w-full py-3 text-sm font-bold border-emerald-300 bg-emerald-50/80 hover:bg-emerald-100 text-emerald-800 shadow-sm flex items-center justify-center gap-2">
+          <i class="fa-solid fa-file-zipper text-emerald-600 text-base"></i> Download Full Project (.ZIP)
+        </a>
+        <p class="text-[11px] text-slate-400 mt-1">Complete offline package: HTML5, CSS, JS, Assets, Java Backend & MySQL Database</p>
+      </div>
+    </div>
+
+    <div class="mt-8 pt-6 border-t border-slate-200 text-xs text-slate-400 flex items-center justify-between">
+      <span>Default Demo Login: <strong class="text-slate-700">admin@medcare.com</strong></span>
+      <a href="login.html" class="text-primary-600 font-semibold hover:underline">Login Page &rarr;</a>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+  <script>
+    // Auto-direct if already logged in or navigating to store
+    document.addEventListener('DOMContentLoaded', () => {
+      const user = MedCareAuth.getCurrentUser();
+      if (user && window.location.search.includes('redirect')) {
+        window.location.href = 'dashboard.html';
+      }
+    });
+  </script>
+</body>
+</html>
